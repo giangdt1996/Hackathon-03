@@ -11,14 +11,17 @@ function App() {
     },
   ]);
   const [input, setInput] = useState("");
-
+  const [theme, setTheme] = useState(true);
+  const handleChangeDL = () => {
+    setTheme(!theme);
+  };
   return (
-    <div className="App">
+    <div className={theme ? "App light" : "App dark"}>
       <div className="header">
         <h2>
           Review TA Béc Cọp!!! <i class="fa-solid fa-flag"></i>
         </h2>
-        <button>
+        <button onClick={handleChangeDL}>
           <i class="fa-solid fa-circle-half-stroke"></i>
         </button>
       </div>
